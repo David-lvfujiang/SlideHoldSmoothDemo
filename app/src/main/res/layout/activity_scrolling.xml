@@ -15,33 +15,51 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+            android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
+            android:layout_height="match_parent"
+            app:contentScrim="#30469b"
+            app:expandedTitleMarginStart="0dp"
+            app:layout_scrollFlags="scroll|snap|snapMargins">
 
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="30dp"-->
-                <!--app:popupTheme="@style/AppTheme.PopupOverlay"></android.support.v7.widget.Toolbar>-->
-
-            <ImageView
+        <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bg" />
-        </android.support.design.widget.CollapsingToolbarLayout>
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_gravity="top"
-            android:background="@color/colorAccent"></android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
+                android:src="@drawable/bg"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"  />
 
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            ></EditText>
+       <Button
+           android:layout_width="100dp"
+           android:layout_height="50dp"
+           android:layout_alignParentEnd="true"
+           android:text="搜索"
+           android:layout_centerVertical="true"
+           >
+
+       </Button>
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</ScrollView>
     <include layout="@layout/content_scrolling" />
 </android.support.design.widget.CoordinatorLayout>
